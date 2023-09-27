@@ -79,11 +79,13 @@
         `.key[data-kb="${kb}"]`);
         // '.key[data-kb="' + kb + '"]')
       if (key) {
-        key.classList.add('pressed');
-        let note = key.dataset.note;
-        let octave = key.parentElement.dataset.octave;
-
-        piano.play(note, octave, 2);
+        if (!key.classList.contains('pressed')) {
+          key.classList.add('pressed');
+          let note = key.dataset.note;
+          let octave = key.parentElement.dataset.octave;
+  
+          piano.play(note, octave, 2);
+        }
       }
     });
     window.addEventListener('keyup', function(event) {
