@@ -84,11 +84,14 @@
         let octave = key.parentElement.dataset.octave;
 
         piano.play(note, octave, 2);
-        // setTimeout(function() {
-        //   let key = document.querySelector(
-        //     `.key[data-kb="${event.key}"]`);
-        //   key.classList.remove('pressed');
-        // }, 200);
+      }
+    });
+    document.addEventListener('keyup', function(event) {
+      let kb = event.key;
+      let key = document.querySelector(
+        `.key[data-kb="${kb}"]`);
+      if (key) {
+          key.classList.remove('pressed');
       }
     });
   </script>
