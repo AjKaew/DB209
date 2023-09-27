@@ -51,6 +51,7 @@ html {
 
 .key.black {
   position: relative;
+  z-index: 998;
 }
 
 .key.black::after {
