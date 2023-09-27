@@ -60,16 +60,6 @@
     </div>
   </div>
   <script>
-  	function playNote(note, octave) {
-  
-  		src = __audioSynth.generate(note, octave, 2);
-  		container = new Audio(src);
-  		container.addEventListener('ended', function() { container = null; });
-  		container.addEventListener('loadeddata', function(e) { e.target.play(); });
-  		container.autoplay = false;
-  		container.setAttribute('type', 'audio/wav');
-  		container.load();
-  	};
     Synth.setVolume(0.5);
     let piano = Synth.createInstrument('piano');
     let keys = document.querySelectorAll('.key');
@@ -93,7 +83,7 @@
         let note = key.dataset.note;
         let octave = key.parentElement.dataset.octave;
 
-        piano.playNote(note, octave, 2);
+        piano.play(note, octave, 2);
         setTimeout(function() {
           let key = document.querySelector(
             `.key[data-kb="${event.key}"]`);
