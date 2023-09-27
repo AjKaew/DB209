@@ -31,11 +31,11 @@ html {
   width: 315px;
 }
 
-.key:active, .pressed {
+.key:active, .white.pressed {
   transform: translateY(2px);
 }
 
-.key.black:active, .pressed {
+.key.black:active, .black.pressed {
   z-index: 1000;
 }
 
