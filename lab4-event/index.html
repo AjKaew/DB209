@@ -73,7 +73,7 @@
       });
     }
 
-    document.addEventListener('keydown', function(event) {
+    window.addEventListener('keydown', function(event) {
       let kb = event.key;
       let key = document.querySelector(
         `.key[data-kb="${kb}"]`);
@@ -86,7 +86,7 @@
         piano.play(note, octave, 2);
       }
     });
-    document.addEventListener('keyup', function(event) {
+    window.addEventListener('keyup', function(event) {
       let kb = event.key;
       let key = document.querySelector(
         `.key[data-kb="${kb}"]`);
